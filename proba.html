@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: block;
+        }
+    </style>
+    <script>
+        console.log('merge')
+        const test = {
+            casa01: {
+                camera01: {
+                    mobilier01: {
+                        denumire: 'dulap-c1c1c',
+                        greutate: 1
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c1c1',
+                        greutate: 2
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c1c1',
+                        greutate: 3
+                    }
+                },
+                camera02: {
+                    mobilier01: {
+                        denumire: 'dulap-c1c2',
+                        greutate: 4
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c1c2',
+                        greutate: 5
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c1c2',
+                        greutate: 6
+                    }
+                },
+                camera03: {
+                    mobilier01: {
+                        denumire: 'dulap-c1c3',
+                        greutate: 7
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c1c3',
+                        greutate: 8
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c1c3',
+                        greutate: 9
+                    }
+                }
+            },
+            casa02: {
+                camera01: {
+                    mobilier01: {
+                        denumire: 'dulap-c2c1',
+                        greutate: 10
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c2c1',
+                        greutate: 11
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c2c1',
+                        greutate: 12
+                    }
+                },
+                camera02: {
+                    mobilier01: {
+                        denumire: 'dulap-c2c2',
+                        greutate: 13
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c2c2',
+                        greutate: 14
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c2c2',
+                        greutate: 15
+                    }
+                },
+                camera03: {
+                    mobilier01: {
+                        denumire: 'dulap-c2c3',
+                        greutate: 16
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c2c3',
+                        greutate: 17
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c2c3',
+                        greutate: 18
+                    }
+                }
+            },
+            casa03: {
+                camera01: {
+                    mobilier01: {
+                        denumire: 'dulap-c3c1',
+                        greutate: 19
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c3c1',
+                        greutate: 20
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c3c1',
+                        greutate: 21
+                    }
+                },
+                camera02: {
+                    mobilier01: {
+                        denumire: 'dulap-c3c2',
+                        greutate: 22
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c3c2',
+                        greutate: 23
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c3c2',
+                        greutate: 24
+                    }
+                },
+                camera03: {
+                    mobilier01: {
+                        denumire: 'dulap-c3c3',
+                        greutate: 25
+                    },
+                    mobilier02: {
+                        denumire: 'masa-c3c3',
+                        greutate: 26
+                    },
+                    mobilier03: {
+                        denumire: 'scaun-c3c3',
+                        greutate: 27
+                    }
+                }
+            }
+        }
+        document.addEventListener('change', (event) => {
+            // document.change(function () {
+            if (document.querySelector('#casa').value && document.querySelector('#camera').value && document.querySelector('#mobilier').value) {
+                const casaAleasa = document.querySelector('#casa').value;
+                console.log(casaAleasa);
+                const cameraAleasa = document.querySelector('#camera').value;
+                console.log(cameraAleasa);
+                const mobilierAles = document.querySelector('#mobilier').value;
+                console.log(mobilierAles);
+
+                const ales = document.createElement("div");
+                document.body.appendChild(ales);
+                ales.innerHTML = test[casaAleasa][cameraAleasa][mobilierAles].denumire;
+
+                // vreau sa imi printeze 
+                console.log(test.casa01.camera02.mobilier03.denumire)
+
+            }
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <label for="casa">Alege casa:</label>
+        <select name="casa" id="casa">
+            <option value="">Alege ...</option>
+            <option value="casa01">Prima casa</option>
+            <option value="casa02">A doua casa</option>
+            <option value="casa03">A treia casa</option>
+        </select>
+    </div>
+    <div>
+        <label for="camera">Alege camera:</label>
+        <select name="camera" id="camera">
+            <option value="">Alege ...</option>
+            <option value="camera01">Prima camera</option>
+            <option value="camera02">A doua camera</option>
+            <option value="camera03">A treia camera</option>
+        </select>
+    </div>
+    <div>
+        <label for="mobilier">Alege mobilier:</label>
+        <select name="mobilier" id="mobilier">
+            <option value="">Alege ...</option>
+            <option value="mobilier01">Dulap</option>
+            <option value="mobilier02">Masa</option>
+            <option value="mobilier03">Scaun</option>
+        </select>
+    </div>
+
+
+</body>
+
+</html>
